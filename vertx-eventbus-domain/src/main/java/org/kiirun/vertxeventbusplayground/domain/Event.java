@@ -2,7 +2,6 @@ package org.kiirun.vertxeventbusplayground.domain;
 
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,14 +1,14 @@
 package org.kiirun.vertxeventbusreceiver;
 
-import io.vertx.core.AbstractVerticle;
-import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.VertxOptions;
-import io.vertx.core.eventbus.EventBus;
 import org.kiirun.vertxeventbusplayground.domain.Event;
 import org.kiirun.vertxeventbusplayground.infrastructure.EventCodec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Vertx;
+import io.vertx.core.VertxOptions;
+import io.vertx.core.eventbus.EventBus;
 
 public class Receiver extends AbstractVerticle {
    private static final Logger LOGGER = LoggerFactory.getLogger( Receiver.class );

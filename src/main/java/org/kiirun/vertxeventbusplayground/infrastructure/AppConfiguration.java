@@ -1,10 +1,8 @@
 package org.kiirun.vertxeventbusplayground.infrastructure;
 
 import java.util.List;
-import java.util.Observable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Supplier;
 
 import org.kiirun.vertxeventbusplayground.domain.Sendable;
 import org.slf4j.Logger;
@@ -13,9 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.google.common.base.Throwables;
-import com.google.common.util.concurrent.Futures;
 
-import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.eventbus.EventBus;
