@@ -35,6 +35,7 @@ Icon
 .Spotlight-V100
 .Trashes
 build
+classes
 bin
 .gradle
 .settings
