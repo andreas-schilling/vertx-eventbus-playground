@@ -1,0 +1,3 @@
+rootProject.name = 'vertx-eventbus-playground'
+include 'vertx-eventbus-domain'
+include 'vertx-eventbus-receiver'

@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':vertx-eventbus-domain')
+
+    compile "io.vertx:vertx-hazelcast:${vertxVersion}"
+}
