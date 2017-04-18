@@ -39,5 +39,4 @@ public class Sender extends AbstractVerticle {
       } );
       startFuture.complete();
    }
-
 }
