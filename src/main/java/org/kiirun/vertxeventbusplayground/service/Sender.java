@@ -10,9 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.google.common.collect.ImmutableMap;
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.eventbus.EventBus;
+import io.vertx.core.json.JsonObject;
 
 @Component
 public class Sender extends AbstractVerticle {
@@ -20,7 +23,7 @@ public class Sender extends AbstractVerticle {
 
    private final EventBus eventBus;
 
-   public Sender( final EventBus eventBus) {
+   public Sender( final EventBus eventBus ) {
       super();
       this.eventBus = eventBus;
    }
@@ -29,7 +32,8 @@ public class Sender extends AbstractVerticle {
    public void start( final Future<Void> startFuture ) throws Exception {
       vertx.setPeriodic( 1000, timerId -> {
          final int size = new Random().nextInt();
-         final Event event = new Event( EventId.create( UUID.randomUUID().toString() ), "SomeEvent[" + size + "]", size );
+         final Event event = new Event( EventId.create( UUID.randomUUID().toString() ), "SomeEvent[" + size + "]", size,
+               ImmutableMap.of( "firstProperty", "isAString", "secondProperty", 100 ) );
          eventBus.publish( Addresses.EVENTS, event );
          LOGGER.info( "Sending event message: " + event );
       } );
