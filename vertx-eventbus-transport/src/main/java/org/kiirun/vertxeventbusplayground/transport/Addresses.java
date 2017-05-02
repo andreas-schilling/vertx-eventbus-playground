@@ -26,7 +26,7 @@ public enum Addresses {
       return address;
    }
 
-   public <T> MessageConsumer<T> consume( final EventBus eventBus, final Handler<T> handler ) {
+   public <T extends Sendable> MessageConsumer<T> consume( final EventBus eventBus, final Handler<T> handler ) {
       return eventBus.consumer( address, message -> {
          handler.handle( ((JsonObject) message.body()).mapTo( (Class<T>) clazz ) );
       } );
