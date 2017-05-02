@@ -1,4 +1,4 @@
-package org.kiirun.vertxeventbusplayground.infrastructure;
+package org.kiirun.vertxeventbusplayground.transport.codecs;
 
 import org.kiirun.vertxeventbusplayground.domain.Sendable;
 import org.slf4j.Logger;

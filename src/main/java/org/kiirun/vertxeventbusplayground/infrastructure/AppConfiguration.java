@@ -5,12 +5,11 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
 import org.kiirun.vertxeventbusplayground.domain.Sendable;
+import org.kiirun.vertxeventbusplayground.transport.codecs.CustomCodec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.google.common.base.Throwables;
 
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
@@ -31,7 +30,7 @@ public class AppConfiguration {
       try {
          latch.await();
       } catch ( InterruptedException e ) {
-         Throwables.propagate( e );
+         throw new RuntimeException( e );
       }
       return vertx.get();
    }
